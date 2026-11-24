@@ -13,19 +13,21 @@
     location.replace('/login.html');
   };
 
-  // botão Sair, visível só na Visão geral
+  // botão Sair dentro da barra superior (fica parado ao rolar)
   const sair = document.createElement('button');
   sair.textContent = 'Sair';
   sair.onclick = window.MAPA_LOGOUT;
-  sair.style.cssText = 'position:fixed;top:250px;right:330px;z-index:50;padding:8px 16px;border:1px solid #e8c76a;border-radius:8px;background:transparent;color:#e8c76a;font-weight:700;cursor:pointer';
-  document.body.appendChild(sair);
+  sair.style.cssText = 'margin-right:12px;padding:8px 14px;border:1px solid #e8c76a;border-radius:8px;background:transparent;color:#e8c76a;font-weight:700;cursor:pointer;white-space:nowrap';
 
-  const mostrarSair = () => {
+  const montarSair = () => {
+    const tools = document.querySelector('.top-tools');
+    if (!tools) return;
+    if (!sair.isConnected) tools.insertBefore(sair, tools.firstChild);
     const h = location.hash;
-    sair.style.display = (h === '' || h === '#' || h === '#inicio') ? 'block' : 'none';
+    sair.style.display = (h === '' || h === '#' || h === '#inicio') ? 'inline-block' : 'none';
   };
-  window.addEventListener('hashchange', mostrarSair);
-  mostrarSair();
+
+  window.addEventListener('hashchange', montarSair);
 
   const scripts = ['data.js', 'exercises.js', 'flashcards-extra.js', 'piraquara.js', 'app.js'];
   for (const s of scripts) {
@@ -35,4 +37,7 @@
       document.body.appendChild(t);
     });
   }
+
+  montarSair();
+  setTimeout(montarSair, 800);
 })();
