@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0e263f">
+  <meta name="description" content="Estude para o concurso de Professor de Piraquara com trilhas de estudo, simulados comentados, cronograma e acompanhamento de desempenho.">
+  <title>Mapa da Aprovação — Professor Piraquara 2027</title>
+  <link rel="icon" type="image/svg+xml" href="icon.svg">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <a class="skip" href="#main">Pular para o conteúdo</a>
+  <div class="shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#inicio" aria-label="Mapa da Aprovação, início"><img src="icon.svg" alt=""><div>MAPA DA<span>APROVAÇÃO</span><small>ESPAÇO DE ESTUDOS</small></div></a>
+      <div class="course-id"><span class="course-mark">P</span><div><b>Professor Piraquara</b><small>Edital 126/2026 · 2027</small></div></div>
+      <nav id="nav" aria-label="Menu principal"></nav>
+      <div class="side-bottom"><div class="side-progress"><div><span>SEU PROGRESSO</span><b id="sidePercent">0%</b></div><div class="progress-track"><i id="sideProgress"></i></div><small id="sideCount">0 de 67 tópicos</small></div><button class="side-btn" data-action="navigate" data-page="config"><span id="settingsIcon"></span> Preferências</button><small class="side-disclaimer">Material independente<br>Mapa da Aprovação © 2026</small></div>
+    </aside>
+    <div class="stage">
+      <header class="topbar"><button class="icon-button mobile-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false"></button><div class="crumb"><span>Meu ambiente</span><span class="slash">/</span><b id="pageTitle">Visão geral</b></div><div class="top-tools"><button id="globalSearch" class="search-button"><span class="search-icon"></span><span>Buscar assuntos</span><kbd>Ctrl K</kbd></button><span class="avatar" aria-label="Área de estudante">E</span></div></header>
+      <div class="account-bar"><!-- ACCOUNT_CONTROLS --></div>
+      <main id="main" tabindex="-1"></main>
+      <footer class="footer">Mapa da Aprovação · Material preparatório independente · <button data-action="navigate" data-page="fontes">Fontes e atualização normativa</button><nav class="student-legal-links" aria-label="Informações legais"><a href="/termos-de-uso">Termos de Uso</a><a href="/politica-de-privacidade">Política de Privacidade</a></nav></footer>
+    </div>
+  </div>
+  <div id="overlay" hidden></div>
+  <dialog id="searchDialog"><div class="dialog-head"><h2>Buscar no guia</h2><button class="icon-button" data-action="close-search" aria-label="Fechar busca">✕</button></div><input id="searchInput" class="field" placeholder="Ex.: BNCC, crase, Piaget..." autocomplete="off"><div id="searchResults" class="search-results"></div></dialog>
+  <dialog id="confirmDialog"><div class="dialog-head"><h2 id="confirmTitle"></h2><button class="icon-button" data-action="cancel-confirm" aria-label="Fechar">✕</button></div><p id="confirmText"></p><div class="button-row"><button class="secondary" data-action="cancel-confirm">Cancelar</button><button class="primary" id="confirmYes">Confirmar</button></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <!-- ACCOUNT -->
+  <script src="data.js"></script>
+  <script src="exercises.js"></script>
+  <script src="flashcards-extra.js"></script>
+  <script src="piraquara.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
