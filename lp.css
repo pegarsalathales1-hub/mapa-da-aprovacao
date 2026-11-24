@@ -232,6 +232,6 @@ em{font-style:normal;background:linear-gradient(90deg,var(--ouro-2),var(--ouro))
 .chip:hover{transform:translateY(-6px) scale(1.04);border-color:rgba(232,199,106,.5);box-shadow:0 30px 50px -14px rgba(0,0,0,.7),0 0 32px -6px rgba(232,199,106,.35)}
 .chip:hover span{box-shadow:0 0 18px rgba(232,199,106,.6)}
 
-/* nota da prévia logo acima da faixa de frases */
-.mockup .preview-note{position:relative;left:auto;right:auto;bottom:auto;margin-top:44px;text-align:center}
-.hero{padding-bottom:40px}
+/* nota da prévia: só na área à esquerda do celular, logo acima da faixa de frases */
+.mockup .preview-note{position:absolute;left:0;right:auto;top:auto;width:calc(100% - 230px);bottom:-58px;margin:0;text-align:left}
+.hero{padding-bottom:90px}
