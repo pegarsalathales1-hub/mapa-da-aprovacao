@@ -14,6 +14,7 @@ button.principal{width:100%;margin-top:18px;padding:12px;border:0;border-radius:
 button.alt{background:none;border:0;color:#e8c76a;font-weight:600;margin-top:12px;cursor:pointer;padding:0}
 .erro{color:#ff8a8a;font-size:13px;min-height:18px;margin-top:10px}
 .oculto{display:none}
+.dica{font-size:12px;opacity:.7;margin-top:4px}
 </style>
 </head>
 <body>
@@ -21,14 +22,15 @@ button.alt{background:none;border:0;color:#e8c76a;font-weight:600;margin-top:12p
   <h1 id="titulo">Entrar na área de estudos</h1>
 
   <form id="formLogin">
-    <label>E-mail</label><input type="email" id="loginEmail" required>
-    <label>Senha</label><input type="password" id="loginSenha" required>
+    <label>Usuário</label><input id="loginUsuario" autocomplete="username" required>
+    <label>Senha</label><input type="password" id="loginSenha" autocomplete="current-password" required>
     <button class="principal" type="submit">Entrar</button>
   </form>
 
   <form id="formCadastro" class="oculto">
     <label>Nome</label><input id="cadNome" required>
-    <label>E-mail</label><input type="email" id="cadEmail" required>
+    <label>Usuário</label><input id="cadUsuario" required>
+    <div class="dica">Use só letras, números, ponto, traço ou underline (mínimo 3 caracteres).</div>
     <label>Senha (mínimo 6 caracteres)</label><input type="password" id="cadSenha" minlength="6" required>
     <label>Código de acesso</label><input id="cadCodigo" placeholder="MAPA-0001" required>
     <button class="principal" type="submit">Criar conta</button>
@@ -44,6 +46,10 @@ button.alt{background:none;border:0;color:#e8c76a;font-weight:600;margin-top:12p
 const $ = id => document.getElementById(id);
 const erro = m => $('erro').textContent = m;
 
+// transforma o usuário em um e-mail interno (nunca enviado a ninguém)
+const emailDe = u => u.trim().toLowerCase().replace(/\s+/g, '') + '@alunos.mapadaaprovacao.online';
+const usuarioValido = u => /^[a-z0-9._-]{3,30}$/.test(u.trim().toLowerCase());
+
 $('alternar').onclick = () => {
   const cadastro = $('formCadastro').classList.toggle('oculto') === false;
   $('formLogin').classList.toggle('oculto', cadastro);
@@ -55,9 +61,10 @@ $('alternar').onclick = () => {
 $('formLogin').onsubmit = async e => {
   e.preventDefault(); erro('');
   const { data, error } = await sb.auth.signInWithPassword({
-    email: $('loginEmail').value.trim(), password: $('loginSenha').value
+    email: emailDe($('loginUsuario').value),
+    password: $('loginSenha').value
   });
-  if (error) return erro('E-mail ou senha incorretos.');
+  if (error) return erro('Usuário ou senha incorretos.');
   const { data: aluno } = await sb.from('alunos').select('id').eq('id', data.user.id).maybeSingle();
   if (!aluno) { await sb.auth.signOut(); return erro('Esta conta não tem acesso ativo. Use seu código no primeiro acesso.'); }
   location.href = '/';
@@ -65,17 +72,20 @@ $('formLogin').onsubmit = async e => {
 
 $('formCadastro').onsubmit = async e => {
   e.preventDefault(); erro('');
+  const usuario = $('cadUsuario').value;
+  if (!usuarioValido(usuario)) return erro('Usuário inválido. Use 3 a 30 caracteres: letras, números, ponto, traço ou underline.');
+
   const codigo = $('cadCodigo').value.trim().toUpperCase();
-  const email = $('cadEmail').value.trim();
   const senha = $('cadSenha').value;
   const nome = $('cadNome').value.trim();
+  const email = emailDe(usuario);
 
   const { data: valido } = await sb.rpc('codigo_valido', { p_codigo: codigo });
   if (!valido) return erro('Código inválido ou já utilizado.');
 
   const { data, error } = await sb.auth.signUp({ email, password: senha });
   if (error) return erro(error.message.includes('already')
-    ? 'Este e-mail já tem conta. Use Entrar.'
+    ? 'Este usuário já existe. Use Entrar.'
     : 'Não foi possível criar a conta: ' + error.message);
 
   if (!data.session) {
