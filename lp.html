@@ -1,49 +1,247 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Prepare-se para o concurso de Professor de Piraquara 2027 com trilhas de estudo, simulados comentados, cronograma e flashcards, em um único aplicativo.">
-  <meta name="theme-color" content="#0c2030"><title>Mapa da Aprovação | Professor Piraquara 2027</title>
-  <link rel="icon" href="/icon.svg"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="/lp.css"><script defer src="/lp.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Prepare-se para o concurso de Professor de Piraquara 2027 com trilhas de estudo, simulados comentados, cronograma e flashcards.">
+<meta name="theme-color" content="#081a2d">
+<title>Mapa da Aprovação | Professor Piraquara 2027</title>
+<link rel="icon" type="image/svg+xml" href="icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="lp.css">
 </head>
 <body>
-<header class="site-header"><div class="wrap nav"><a class="brand" href="/lp" aria-label="Mapa da Aprovação"><img src="/icon.svg" alt=""><span>MAPA DA<strong>APROVAÇÃO</strong></span></a><nav aria-label="Navegação"><a href="#demonstracao">Por dentro do app</a><a href="#conteudo">O que inclui</a><a href="#duvidas">Dúvidas</a></nav><div class="nav-actions"><a class="student-link" href="/login.html">Já sou aluno</a><a class="button gold small" href="#oferta">Quero meu acesso</a></div></div></header>
-<main id="main">
-  <section class="hero">
-    <div class="wrap hero-grid">
-      <div class="hero-copy">
-        <div class="eyebrow-pill"><span class="dot"></span> CONCURSO DE PROFESSOR • PIRAQUARA/PR</div>
-        <h1>Seu tempo é curto.<br>Estude com <span>direção.</span></h1>
-        <p class="lead">Tudo o que você precisa organizar para a prova de Professor de Piraquara, em um único aplicativo de estudos, desenvolvido para o Edital 126/2026.</p>
-        <div class="hero-list"><span><i class="check">✓</i> Plano de estudo pronto</span><span><i class="check">✓</i> Questões comentadas</span><span><i class="check">✓</i> Acesso pelo celular e computador</span></div>
-        <a class="button gold hero-cta" href="#oferta">Quero começar minha preparação</a>
-        <p class="micro">Pagamento único · acesso individual · sem mensalidade</p>
-        <div class="countdown-card"><div class="date-icon"><span>JAN</span><b>31</b></div><div><strong>Prova em 31 de janeiro de 2027</strong><p id="countdown">Organize sua preparação desde já.</p></div></div>
+
+<div class="bg-orbs" aria-hidden="true">
+  <span class="orb o1"></span><span class="orb o2"></span><span class="orb o3"></span>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/lp" aria-label="Mapa da Aprovação, início">
+      <img src="icon.svg" alt="">
+      <div>MAPA DA<span>APROVAÇÃO</span></div>
+    </a>
+    <nav class="menu" aria-label="Navegação">
+      <a href="#demonstracao">Por dentro do app</a>
+      <a href="#conteudo">O que inclui</a>
+      <a href="#duvidas">Dúvidas</a>
+    </nav>
+    <div class="acoes">
+      <a class="aluno" href="/login.html">Já sou aluno</a>
+      <a class="btn sm" href="#oferta">Quero meu acesso</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal"><i class="dot"></i>CONCURSO DE PROFESSOR • PIRAQUARA/PR</span>
+
+      <div class="countdown reveal">
+        <div class="cal"><small>JAN</small><b>31</b></div>
+        <div>
+          <strong>Prova em 31 de janeiro de 2027</strong>
+          <span>Faltam <b class="num" id="dias">--</b> dias para a prova.</span>
+        </div>
       </div>
-      <div class="hero-product" aria-label="Prévia ilustrativa da plataforma de estudos">
-        <div class="hero-orbit"></div><div class="product-tag"><span class="dot"></span> PLATAFORMA DE ESTUDOS</div>
-        <div class="device desktop-device"><div class="device-top"><i></i><i></i><i></i><span>Mapa da Aprovação</span></div><div class="screen-layout"><aside class="preview-sidebar"><div class="preview-brand"><img src="/icon.svg" alt=""><span>MAPA DA<br><b>APROVAÇÃO</b></span></div><div class="preview-user">Professor Piraquara <small>Edital 126/2026</small></div><div class="preview-nav"><small>APRENDER</small><b>⌂ &nbsp; Visão geral</b><span>▤ &nbsp; Trilhas de estudo</span><span>▦ &nbsp; Cronograma</span><span>▷ &nbsp; Videoaulas</span><small>PRATICAR</small><span>▧ &nbsp; Simulados</span><span>◇ &nbsp; Flashcards</span><span>◴ &nbsp; Caderno de erros</span></div></aside><div class="preview-main"><div class="preview-topbar">Meu ambiente &nbsp; / &nbsp; Visão geral <span>⌕ &nbsp; Buscar</span></div><div class="preview-content"><strong class="mini-label">PROFESSOR PIRAQUARA 2027</strong><h2>Seu espaço de estudos</h2><div class="preview-banner"><div><small>SUA PREPARAÇÃO COMEÇA AQUI</small><strong>Estude com direção.</strong><span>Organize sua rotina de estudo.</span><b>Continuar estudos</b></div><div class="compass"><span></span></div></div><div class="preview-stats"><div><small>Tópicos</small><b>67</b><i></i></div><div><small>Questões</small><b>223</b><i></i></div><div><small>Flashcards</small><b>250</b><i></i></div></div><h3>Trilhas de estudo</h3><div class="preview-tiles"><div>Conhecimentos Específicos<small>26 tópicos</small></div><div>Língua Portuguesa<small>17 tópicos</small></div><div>Matemática<small>Revisão e prática</small></div><div>Conhecimentos Gerais<small>Piraquara e Paraná</small></div></div></div></div></div></div><div class="device-base"></div>
-        <div class="phone"><span class="phone-notch"></span><div class="phone-header"><img src="/icon.svg" alt=""><span>Flashcards</span></div><div class="phone-content"><small>REVISÃO ATIVA</small><h3>Memorize no seu ritmo</h3><div class="phone-flash"><span>FLASHCARD</span><b>Pronto para revisar?</b><div class="skeleton"></div><div class="skeleton short"></div><span class="phone-action">Revelar resposta</span></div><div class="phone-bottom"><span>Revisar</span><span>Já sei</span></div></div></div>
-        <div class="floating-chip"><span>✦</span><div><strong>250 flashcards</strong><small>Revisão ativa</small></div></div>
-        <p class="preview-disclaimer">Prévia visual ilustrativa · conteúdo completo após login</p>
+
+      <h1 class="titulo reveal">Seu tempo é curto.<br><em>Estude com direção.</em></h1>
+
+      <p class="lead reveal">Tudo o que você precisa organizar para a prova de Professor de Piraquara, em um único aplicativo de estudos, desenvolvido para o Edital 126/2026.</p>
+
+      <ul class="checks reveal">
+        <li>Plano de estudo pronto</li>
+        <li>Questões comentadas</li>
+        <li>Acesso pelo celular e computador</li>
+      </ul>
+
+      <div class="hero-cta reveal">
+        <a class="btn" href="#oferta">Quero começar minha preparação</a>
+        <p class="micro">Pagamento único · acesso individual · sem mensalidade</p>
       </div>
     </div>
-  </section>
-  <section class="proof-strip" aria-label="O concurso em números"><div class="wrap facts"><div><b>50</b><span>vagas previstas<br><small>mais cadastro de reserva</small></span></div><div><b>R$ 2.565,32</b><span>vencimento inicial<br><small>20 horas semanais</small></span></div><div><b>31/01</b><span>prova objetiva e discursiva<br><small>em 2027</small></span></div><div><b>28/12</b><span>fim das inscrições<br><small>em 2026</small></span></div></div></section>
-  <section id="oferta" class="section offer-section"><div class="wrap offer-layout"><div><p class="kicker">UMA ÚNICA COMPRA</p><h2>Sua preparação começa aqui, sem perder tempo.</h2><p class="section-lead">Receba um ambiente de estudos organizado para o cargo de Professor. Entre pelo celular ou computador e siga seu plano no seu ritmo.</p><ul class="offer-checks"><li>67 tópicos do edital organizados por disciplina</li><li>3 simulados completos com 40 questões cada</li><li>223 questões comentadas no banco de exercícios</li><li>250 flashcards para revisão ativa</li><li>Guia PDF de 83 páginas, cronograma e videoaulas complementares</li></ul></div><div class="offer-card"><div class="offer-label"><span>ACESSO INDIVIDUAL</span><span>PROFESSOR 2027</span></div><h3>Mapa da Aprovação</h3><p>Preparação direcionada para Piraquara</p><div class="price"><span>R$</span><b>27<span>,90</span></b></div><span class="price-caption">Pagamento único · sem assinatura</span><div class="divider"></div><!-- PURCHASE_BUTTON --><div class="security"><span>✓</span> Acesso pessoal por usuário e senha</div><a class="text-link" href="/aluno">Já comprou? Acesse seu ambiente</a></div></div></section>
-  <section id="demonstracao" class="section demo-section"><div class="wrap"><div class="section-head center"><p class="kicker">VEJA COMO FUNCIONA</p><h2>Mais que uma apostila.<br>Um ambiente para estudar de verdade.</h2><p>Explore uma prévia do formato da plataforma. Os conteúdos, comentários e respostas ficam reservados aos alunos.</p></div><div class="demo"><div class="demo-tabs" role="tablist" aria-label="Demonstrações"><button role="tab" type="button" aria-selected="true" aria-controls="demo-lessons" id="tab-lessons" data-demo="lessons">Módulos</button><button role="tab" type="button" aria-selected="false" aria-controls="demo-sim" id="tab-sim" data-demo="sim" tabindex="-1">Simulados</button><button role="tab" type="button" aria-selected="false" aria-controls="demo-flash" id="tab-flash" data-demo="flash" tabindex="-1">Flashcards</button><button role="tab" type="button" aria-selected="false" aria-controls="demo-progress" id="tab-progress" data-demo="progress" tabindex="-1">Desempenho</button></div><div class="demo-window"><div class="demo-chrome"><span><img src="/icon.svg" alt=""> Mapa da Aprovação <small>• Prévia demonstrativa</small></span><span class="window-dots">● ● ●</span></div>
-    <div class="demo-panel" id="demo-lessons" role="tabpanel" aria-labelledby="tab-lessons" tabindex="0"><div class="demo-info"><p class="kicker">APRENDA NO SEU RITMO</p><h3>4 módulos. 67 tópicos para estudar.</h3><p>Estude o conteúdo do edital organizado por matéria, com resumos direcionados, exercícios comentados e videoaulas complementares selecionadas para reforçar o aprendizado.</p><span class="demo-label">✓ Conteúdo organizado do básico à revisão</span></div><div class="demo-screen"><div class="demo-screen-title"><strong>Módulos de estudo</strong><span>67 TÓPICOS DO EDITAL</span></div><div class="schedule-example"><b aria-hidden="true">▤</b><div><strong>Conhecimentos Específicos</strong><span>Pedagogia, legislação, didática e inclusão</span></div><i class="mini-check">26 tópicos</i></div><div class="schedule-example"><b aria-hidden="true">▤</b><div><strong>Língua Portuguesa</strong><span>Interpretação, gramática e coesão</span></div><i class="mini-check">17 tópicos</i></div><div class="schedule-example"><b aria-hidden="true">▤</b><div><strong>Matemática</strong><span>Raciocínio, operações e geometria</span></div><i class="mini-check">10 tópicos</i></div><div class="schedule-example"><b aria-hidden="true">▤</b><div><strong>Conhecimentos Gerais</strong><span>Piraquara, Paraná e atualidades</span></div><i class="mini-check">14 tópicos</i></div><span class="demo-note">Inclui videoaulas públicas selecionadas para aprofundamento.</span></div></div>
-    <div class="demo-panel" id="demo-sim" role="tabpanel" aria-labelledby="tab-sim" hidden tabindex="0"><div class="demo-info"><p class="kicker">PRÁTICA</p><h3>Treine no formato da prova.</h3><p>Resolva simulados de 40 questões, acompanhe o tempo e revise os comentários de cada alternativa.</p><span class="demo-label">✓ Pesos do edital considerados</span></div><div class="demo-screen"><div class="demo-screen-title"><strong>Simulado 01</strong><span>04:00:00</span></div><div class="demo-question"><small>QUESTÃO 01 DE 40</small><div class="skeleton"></div><div class="skeleton short"></div><div class="demo-option"><b>A</b><div class="skeleton"></div></div><div class="demo-option selected"><b>B</b><div class="skeleton"></div></div><div class="demo-option"><b>C</b><div class="skeleton"></div></div><div class="demo-option"><b>D</b><div class="skeleton"></div></div></div><span class="demo-note">Questão ocultada na prévia</span></div></div>
-    <div class="demo-panel" id="demo-flash" role="tabpanel" aria-labelledby="tab-flash" hidden tabindex="0"><div class="demo-info"><p class="kicker">MEMÓRIA ATIVA</p><h3>Revise sem reler tudo.</h3><p>Use cartões de revisão, filtre por matéria e diferencie o que já domina do que precisa revisar.</p><span class="demo-label">✓ 250 cartões na plataforma</span></div><div class="demo-screen"><div class="demo-screen-title"><strong>Flashcards</strong><span>250 CARTÕES</span></div><div class="demo-flash"><small>CONHECIMENTOS ESPECÍFICOS</small><strong>Qual conceito você precisa revisar?</strong><p>Demonstração do formato de um cartão</p><span>Revelar resposta</span></div><div class="demo-flash-actions"><span>Revisar depois</span><span>Já sei</span></div></div></div>
-    <div class="demo-panel" id="demo-progress" role="tabpanel" aria-labelledby="tab-progress" hidden tabindex="0"><div class="demo-info"><p class="kicker">EVOLUÇÃO</p><h3>Descubra onde vale insistir.</h3><p>Visualize os acertos por disciplina, marque tópicos concluídos e volte ao caderno de erros antes da prova.</p><span class="demo-label">✓ Acompanhe sua própria evolução</span></div><div class="demo-screen"><div class="demo-screen-title"><strong>Meu desempenho</strong><span>EXEMPLO ILUSTRATIVO</span></div><div class="progress-demo"><div><span>Conhecimentos Específicos</span><b>72%</b><i style="--p:72%"></i></div><div><span>Língua Portuguesa</span><b>65%</b><i style="--p:65%"></i></div><div><span>Matemática</span><b>48%</b><i style="--p:48%"></i></div><div><span>Conhecimentos Gerais</span><b>80%</b><i style="--p:80%"></i></div></div></div></div>
-  </div></div><div class="center demo-cta"><a class="button gold" href="#oferta">Quero estudar com essa estrutura</a></div></div></section>
-  <section class="section problem-section"><div class="wrap problem-layout"><div><p class="kicker">O DESAFIO NÃO É ESTUDAR MAIS</p><h2>É saber em que focar.</h2><p class="section-lead">Entre trabalho, família e uma rotina corrida, é difícil transformar um edital extenso em uma rotina de preparação. Estudar materiais soltos pode fazer você gastar tempo em conteúdos que não são sua prioridade.</p><div class="problem-list"><div><span>01</span><div><strong>Não saber por onde começar</strong><p>O edital tem vários assuntos, e o tempo até a prova é limitado.</p></div></div><div><span>02</span><div><strong>Estudar sem medir seu avanço</strong><p>Ler resumos não mostra necessariamente quais pontos você precisa reforçar.</p></div></div><div><span>03</span><div><strong>Deixar a prática para o último momento</strong><p>A prova exige interpretação, raciocínio e gestão do tempo.</p></div></div></div></div><div class="weight-card"><p class="kicker">ESTRATÉGIA DO EDITAL</p><h3>Onde estão os pontos?</h3><div class="weight-total"><strong>50<span>/70</span></strong><p>pontos da objetiva vêm dos conhecimentos específicos.</p></div><div class="weight-bar"><i></i><i></i><i></i><i></i></div><div class="weight-legend"><span><i></i> Específicos — 50 pts</span><span><i></i> Português — 10 pts</span><span><i></i> Matemática — 5 pts</span><span><i></i> Gerais — 5 pts</span></div><p class="weight-note">Uma questão específica vale 2,5 pontos; nas outras disciplinas, vale 1 ponto. Priorizar os assuntos certos faz diferença na sua estratégia.</p><a href="https://www.diariomunicipal.com.br/amp/materia/6C19798C" target="_blank" rel="noopener noreferrer" class="text-link">Consultar Edital 126/2026</a></div></div></section>
-  <section class="section method-section"><div class="wrap"><div class="section-head center"><p class="kicker">O MÉTODO MAPA DA APROVAÇÃO</p><h2>Organize. Pratique. Evolua.</h2><p>Uma rotina simples que você pode repetir até o dia da prova.</p></div><div class="method-grid"><article><span class="step-number">01</span><div class="step-art art-book"><i></i><i></i><i></i></div><h3>Estude com direção</h3><p>Siga trilhas por disciplina e um cronograma pronto, priorizando os conhecimentos específicos.</p></article><article><span class="step-number">02</span><div class="step-art art-question"><span>A</span><span>B</span><span>C</span><span>D</span></div><h3>Pratique com propósito</h3><p>Resolva questões, teste seus conhecimentos no simulado e prepare sua discursiva.</p></article><article><span class="step-number">03</span><div class="step-art art-chart"><i></i><i></i><i></i><i></i></div><h3>Revise os pontos fracos</h3><p>Use o caderno de erros e os flashcards para focar no que ainda precisa consolidar.</p></article></div></div></section>
-  <section id="conteudo" class="section features-section"><div class="wrap"><div class="section-head"><p class="kicker">O QUE TEM DENTRO DO APP</p><h2>Seu material, reunido em um só lugar.</h2><p>Da primeira sessão à revisão de véspera.</p></div><div class="features-grid"><article class="feature"><span class="feature-icon">▤</span><div><b>67 tópicos</b><h3>Trilhas de estudo</h3><p>Resumos organizados pelo conteúdo programático do edital.</p></div></article><article class="feature"><span class="feature-icon">▧</span><div><b>223 questões</b><h3>Banco comentado</h3><p>Pratique por assunto e entenda as alternativas.</p></div></article><article class="feature"><span class="feature-icon">◷</span><div><b>3 simulados</b><h3>Treino cronometrado</h3><p>40 questões em cada simulado, com pontuação ponderada.</p></div></article><article class="feature"><span class="feature-icon">◇</span><div><b>250 flashcards</b><h3>Revisão ativa</h3><p>Treine a memória e filtre os cartões por assunto.</p></div></article><article class="feature"><span class="feature-icon">▦</span><div><b>65 dias</b><h3>Cronograma diário</h3><p>Planejamento para dividir a preparação em etapas.</p></div></article><article class="feature"><span class="feature-icon">▷</span><div><b>4 disciplinas</b><h3>Videoaulas complementares</h3><p>Seleção de aulas públicas organizada por disciplina.</p></div></article><article class="feature"><span class="feature-icon">✎</span><div><b>Prova discursiva</b><h3>Temas e modelos</h3><p>Estrutura de texto, critérios e espaço para treino.</p></div></article><article class="feature"><span class="feature-icon">◎</span><div><b>Piraquara/PR</b><h3>Conhecimento local</h3><p>História do município, vídeo e questões comentadas.</p></div></article><article class="feature"><span class="feature-icon">▱</span><div><b>83 páginas</b><h3>Guia em PDF incluso</h3><p>Material revisado para consulta e estudo individual.</p></div></article><article class="feature"><span class="feature-icon">▥</span><div><b>Seu progresso</b><h3>Desempenho e erros</h3><p>Visualize seus resultados e faça revisões direcionadas.</p></div></article><article class="feature"><span class="feature-icon">✓</span><div><b>Reta final</b><h3>Dia da prova</h3><p>Estratégias, regras do edital e checklist de preparação.</p></div></article><article class="feature"><span class="feature-icon">▶</span><div><b>2 min 33 s</b><h3>Tutorial do aplicativo</h3><p>Aprenda a usar todos os recursos logo no primeiro acesso.</p></div></article></div><div class="center demo-cta"><a class="button gold" href="#oferta">Quero ter tudo isso à minha disposição</a></div></div></section>
-  <section class="section access-section"><div class="wrap"><div class="section-head center"><p class="kicker">COMEÇAR É SIMPLES</p><h2>Três passos para estudar.</h2></div><div class="access-steps"><article><span>1</span><h3>Garanta seu acesso</h3><p>Conclua a compra pelo checkout.</p></article><article><span>2</span><h3>Crie sua conta</h3><p>Use o código individual recebido e escolha seu usuário e sua senha.</p></article><article><span>3</span><h3>Comece a estudar</h3><p>Abra o aplicativo no navegador e siga seu plano de preparação.</p></article></div></div></section>
-  <section id="duvidas" class="section faq-section"><div class="wrap faq-layout"><div><p class="kicker">PERGUNTAS FREQUENTES</p><h2>Antes de começar,<br>tire suas dúvidas.</h2><p class="section-lead">Tudo o que você precisa saber sobre o acesso e o material.</p><a class="button gold" href="#oferta">Ver minha oferta</a></div><div class="faq-list"><details open><summary>O material é feito para o concurso de Piraquara?</summary><p>Sim. Foi elaborado para o cargo de Professor do Edital 126/2026, com base no Anexo I. É um material preparatório independente, não oficial da Prefeitura ou da banca.</p></details><details><summary>Preciso instalar algum aplicativo?</summary><p>Não. A plataforma funciona no navegador do celular ou computador. Você entra pela página do aluno usando seu usuário e senha.</p></details><details><summary>Preciso pagar mensalidade?</summary><p>Não. A oferta do produto principal tem pagamento único. O acesso é individual, conforme as condições da compra.</p></details><details><summary>As questões são de provas anteriores?</summary><p>As questões foram elaboradas para este material. Os simulados seguem o formato, a distribuição e os pesos definidos no edital.</p></details><details><summary>As videoaulas são próprias?</summary><p>As aulas de estudo são conteúdos públicos de terceiros, selecionados e organizados como complemento. O tutorial de uso do aplicativo foi elaborado para a plataforma.</p></details><details><summary>O progresso fica salvo?</summary><p>O histórico é salvo no navegador do seu dispositivo. Em Preferências, você pode exportar e importar seus dados caso troque de aparelho.</p></details><details><summary>O PDF de mapas mentais está incluso?</summary><p>O guia principal de 83 páginas está incluso. O Kit de Revisão Visual é um produto complementar separado, caso seja oferecido no checkout.</p></details><details><summary>Tenho direito a solicitar cancelamento?</summary><p>O cancelamento e reembolso seguem as condições da compra e os direitos legais aplicáveis. Consulte os Termos de Uso e a plataforma de pagamento.</p></details></div></div></section>
-  <section class="final-section"><div class="wrap final-content"><img src="/icon.svg" alt=""><p class="kicker">PROFESSOR PIRAQUARA 2027</p><h2>O dia da prova está chegando.<br><span>Comece a se preparar hoje.</span></h2><p>Uma plataforma pensada para dar mais clareza à sua rotina de estudos.</p><a class="button gold" href="#oferta">Quero meu acesso ao Mapa da Aprovação</a></div></section>
+
+    <div class="mockup reveal" aria-label="Prévia ilustrativa da plataforma de estudos">
+      <div class="screen">
+        <div class="screen-top"><span></span><span></span><span></span><em>Mapa da Aprovação</em></div>
+        <div class="screen-body">
+          <aside class="s-side">
+            <div class="s-brand"><i></i><b>MAPA DA<span>APROVAÇÃO</span></b></div>
+            <div class="s-course"><b>Professor Piraquara</b><small>Edital 126/2026</small></div>
+            <p class="s-label">APRENDER</p>
+            <div class="s-item on"><i></i>Visão geral</div>
+            <div class="s-item"><i></i>Trilhas de estudo</div>
+            <div class="s-item"><i></i>Cronograma</div>
+            <p class="s-label">PRATICAR</p>
+            <div class="s-item"><i></i>Simulados</div>
+            <div class="s-item"><i></i>Flashcards</div>
+          </aside>
+          <div class="s-main">
+            <small class="s-kicker">PROFESSOR PIRAQUARA 2027</small>
+            <h3>Seu espaço de estudos</h3>
+            <div class="s-hero">
+              <small>SUA PREPARAÇÃO COMEÇA AQUI</small>
+              <b>Estude com direção.</b>
+              <span class="s-btn">Continuar estudos</span>
+            </div>
+            <div class="s-stats">
+              <div><small>Tópicos</small><b>67</b></div>
+              <div><small>Questões</small><b>223</b></div>
+              <div><small>Flashcards</small><b>250</b></div>
+            </div>
+            <small class="s-kicker">TRILHAS DE ESTUDO</small>
+            <div class="s-trilhas">
+              <div><b>Conhecimentos Específicos</b><small>26 tópicos</small></div>
+              <div><b>Língua Portuguesa</b><small>17 tópicos</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="p-top"><i></i>Flashcards</div>
+        <small class="p-tag">REVISÃO ATIVA</small>
+        <h4>Memorize no seu ritmo</h4>
+        <div class="p-card"><small>FLASHCARD</small><b>Pronto para revisar?</b><span>Revelar resposta</span></div>
+      </div>
+      <div class="chip c1"><span>✦</span><div><b>250 flashcards</b><small>Revisão ativa</small></div></div>
+      <div class="chip c2"><span>✓</span><div><b>Simulados</b><small>com comentários</small></div></div>
+      <p class="preview-note">Prévia visual ilustrativa · conteúdo completo após login</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Trilhas por disciplina</span><i>✦</i><span>Simulados comentados</span><i>✦</i><span>Cronograma diário</span><i>✦</i><span>Flashcards de revisão</span><i>✦</i><span>Caderno de erros</span><i>✦</i><span>Edital 126/2026</span><i>✦</i>
+    <span>Trilhas por disciplina</span><i>✦</i><span>Simulados comentados</span><i>✦</i><span>Cronograma diário</span><i>✦</i><span>Flashcards de revisão</span><i>✦</i><span>Caderno de erros</span><i>✦</i><span>Edital 126/2026</span><i>✦</i>
+  </div>
+</div>
+
+<!-- NÚMEROS -->
+<section class="stats wrap">
+  <div class="stat reveal"><b>67</b><span>tópicos do edital</span></div>
+  <div class="stat reveal"><b>223</b><span>questões</span></div>
+  <div class="stat reveal"><b>250</b><span>flashcards</span></div>
+  <div class="stat reveal"><b>65</b><span>dias de plano</span></div>
+</section>
+
+<!-- DEMONSTRAÇÃO -->
+<section class="section" id="demonstracao">
+  <div class="wrap">
+    <p class="kicker reveal">COMO FUNCIONA</p>
+    <h2 class="h2 reveal">Um plano pronto para você <em>seguir</em></h2>
+    <div class="cards">
+      <article class="card-f reveal"><span class="num-f">01</span><h3>Trilhas por disciplina</h3><p>O conteúdo do edital organizado por matéria, do que cai com mais peso ao que exige revisão.</p></article>
+      <article class="card-f reveal"><span class="num-f">02</span><h3>Simulados comentados</h3><p>Questões no formato da prova, com comentário de cada alternativa para entender o erro.</p></article>
+      <article class="card-f reveal"><span class="num-f">03</span><h3>Cronograma diário</h3><p>Uma rotina de estudo até 31 de janeiro, para você saber o que fazer em cada dia.</p></article>
+      <article class="card-f reveal"><span class="num-f">04</span><h3>Revisão ativa</h3><p>Flashcards e caderno de erros para fixar o conteúdo antes da prova.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- CONTEÚDO -->
+<section class="section alt" id="conteudo">
+  <div class="wrap split">
+    <div class="reveal">
+      <p class="kicker">O QUE INCLUI</p>
+      <h2 class="h2">Tudo em um <em>só lugar</em></h2>
+      <ul class="lista">
+        <li>Trilhas de estudo com os 67 tópicos do edital</li>
+        <li>223 questões comentadas</li>
+        <li>250 flashcards para revisão rápida</li>
+        <li>Simulados e caderno de erros</li>
+        <li>Cronograma de estudo até a prova</li>
+        <li>Acesso pelo celular e pelo computador</li>
+      </ul>
+    </div>
+    <div class="painel reveal">
+      <p class="kicker">SEU PROGRESSO</p>
+      <div class="barra"><span></span></div>
+      <p class="painel-txt">Quem começa hoje organiza trilhas, faz simulados e revisa os pontos fracos antes da prova.</p>
+      <a class="btn ghost" href="#oferta">Ver oferta</a>
+    </div>
+  </div>
+</section>
+
+<!-- OFERTA -->
+<section class="section" id="oferta">
+  <div class="wrap">
+    <div class="oferta reveal">
+      <div class="oferta-txt">
+        <p class="kicker">ACESSO COMPLETO</p>
+        <h2 class="h2">Mapa da Aprovação</h2>
+        <p class="lead">Pagamento único, acesso individual e sem mensalidade.</p>
+        <ul class="lista compacta">
+          <li>Trilhas, cronograma e simulados</li>
+          <li>Flashcards e caderno de erros</li>
+          <li>Acesso vitalício ao conteúdo do edital 126/2026</li>
+        </ul>
+      </div>
+      <div class="oferta-preco">
+        <small>POR APENAS</small>
+        <b>R$ 27,90</b>
+        <span>pagamento único</span>
+        <!-- Troque o href abaixo pelo link de checkout da Cakto -->
+        <a class="btn" href="https://pay.cakto.com.br/SEU-LINK">Garantir meu acesso</a>
+        <p class="micro">Após a compra, você recebe seu código de acesso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DÚVIDAS -->
+<section class="section alt" id="duvidas">
+  <div class="wrap faq-wrap">
+    <p class="kicker reveal">DÚVIDAS</p>
+    <h2 class="h2 reveal">Perguntas <em>frequentes</em></h2>
+    <details class="faq reveal"><summary>Como recebo meu acesso?</summary><p>Após a compra, você recebe um código de acesso. Em "Primeiro acesso", na área de estudos, você cria seu usuário e senha com esse código.</p></details>
+    <details class="faq reveal"><summary>Já tenho conta, o que faço?</summary><p>Use o botão "Já sou aluno" no topo da página e entre com seu usuário e senha.</p></details>
+    <details class="faq reveal"><summary>O acesso é vitalício?</summary><p>O acesso é individual e acompanha o conteúdo do edital 126/2026. Não há mensalidade.</p></details>
+    <details class="faq reveal"><summary>Posso acessar pelo celular?</summary><p>Sim. A plataforma funciona no celular e no computador.</p></details>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="final">
+  <div class="wrap reveal">
+    <h2 class="h2">A prova é em janeiro. <em>O plano começa hoje.</em></h2>
+    <a class="btn" href="#oferta">Quero meu acesso</a>
+  </div>
+</section>
+
 </main>
-<footer><div class="wrap footer-grid"><a class="brand" href="/lp"><img src="/icon.svg" alt=""><span>MAPA DA<strong>APROVAÇÃO</strong></span></a><div><a href="/aluno">Área do aluno</a><a href="/termos-de-uso">Termos de Uso</a><a href="/politica-de-privacidade">Política de Privacidade</a></div><p>Material preparatório independente, sem vínculo com a Prefeitura de Piraquara ou o Instituto Social Univida. Não há garantia de aprovação. Consulte o edital e suas atualizações.</p></div></footer>
-</body></html>
+
+<footer class="rodape">
+  <div class="wrap">
+    <p>Mapa da Aprovação · Material preparatório independente · Não somos vinculados à banca ou ao órgão do concurso.</p>
+  </div>
+</footer>
+
+<script>
+// contagem regressiva até a prova
+(() => {
+  const alvo = new Date('2027-01-31T00:00:00-03:00');
+  const dias = Math.max(0, Math.ceil((alvo - new Date()) / 86400000));
+  document.getElementById('dias').textContent = dias;
+})();
+
+// animação de entrada ao rolar
+(() => {
+  const itens = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) { itens.forEach(i => i.classList.add('in')); return; }
+  const obs = new IntersectionObserver(entradas => {
+    entradas.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); obs.unobserve(e.target); } });
+  }, { threshold: .12 });
+  itens.forEach((i, n) => { i.style.transitionDelay = (n % 4) * 90 + 'ms'; obs.observe(i); });
+})();
+</script>
+</body>
+</html>
