@@ -224,3 +224,14 @@ em{font-style:normal;background:linear-gradient(90deg,var(--ouro-2),var(--ouro))
   *,*::before,*::after{animation:none!important;transition:none!important}
   .reveal{opacity:1;transform:none}
 }
+.legais{display:flex;gap:18px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.legais a{color:var(--ouro);font-size:13px;text-decoration:none}
+.legais a:hover{text-decoration:underline}
+/* hover nos cards flutuantes da prévia */
+.chip{cursor:default;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s,border-color .35s}
+.chip:hover{transform:translateY(-6px) scale(1.04);border-color:rgba(232,199,106,.5);box-shadow:0 30px 50px -14px rgba(0,0,0,.7),0 0 32px -6px rgba(232,199,106,.35)}
+.chip:hover span{box-shadow:0 0 18px rgba(232,199,106,.6)}
+
+/* nota da prévia logo acima da faixa de frases */
+.mockup .preview-note{position:relative;left:auto;right:auto;bottom:auto;margin-top:44px;text-align:center}
+.hero{padding-bottom:40px}
