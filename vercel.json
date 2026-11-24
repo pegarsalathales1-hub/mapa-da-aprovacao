@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "buildCommand": "echo ok",
+  "outputDirectory": ".",
+  "cleanUrls": true
+}
