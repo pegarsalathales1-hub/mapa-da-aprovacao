@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Entrar | Mapa da Aprovação</title>
+<style>
+body{margin:0;min-height:100vh;display:grid;place-items:center;background:#0e263f;font-family:system-ui,sans-serif;color:#fff}
+.box{width:min(360px,92vw);background:#132f4c;padding:28px;border-radius:14px;box-sizing:border-box}
+h1{font-size:20px;margin:0 0 16px}
+label{display:block;font-size:13px;margin:12px 0 4px;opacity:.85}
+input{width:100%;box-sizing:border-box;padding:10px;border-radius:8px;border:1px solid #2b4a6b;background:#0b1d31;color:#fff}
+button.principal{width:100%;margin-top:18px;padding:12px;border:0;border-radius:8px;background:#e8c76a;font-weight:700;cursor:pointer}
+button.alt{background:none;border:0;color:#e8c76a;font-weight:600;margin-top:12px;cursor:pointer;padding:0}
+.erro{color:#ff8a8a;font-size:13px;min-height:18px;margin-top:10px}
+.oculto{display:none}
+</style>
+</head>
+<body>
+<div class="box">
+  <h1 id="titulo">Entrar na área de estudos</h1>
+
+  <form id="formLogin">
+    <label>E-mail</label><input type="email" id="loginEmail" required>
+    <label>Senha</label><input type="password" id="loginSenha" required>
+    <button class="principal" type="submit">Entrar</button>
+  </form>
+
+  <form id="formCadastro" class="oculto">
+    <label>Nome</label><input id="cadNome" required>
+    <label>E-mail</label><input type="email" id="cadEmail" required>
+    <label>Senha (mínimo 6 caracteres)</label><input type="password" id="cadSenha" minlength="6" required>
+    <label>Código de acesso</label><input id="cadCodigo" placeholder="MAPA-0001" required>
+    <button class="principal" type="submit">Criar conta</button>
+  </form>
+
+  <button class="alt" id="alternar" type="button">Primeiro acesso? Criar conta com código</button>
+  <div class="erro" id="erro"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="auth.js"></script>
+<script>
+const $ = id => document.getElementById(id);
+const erro = m => $('erro').textContent = m;
+
+$('alternar').onclick = () => {
+  const cadastro = $('formCadastro').classList.toggle('oculto') === false;
+  $('formLogin').classList.toggle('oculto', cadastro);
+  $('titulo').textContent = cadastro ? 'Criar conta com código' : 'Entrar na área de estudos';
+  $('alternar').textContent = cadastro ? 'Já tenho conta' : 'Primeiro acesso? Criar conta com código';
+  erro('');
+};
+
+$('formLogin').onsubmit = async e => {
+  e.preventDefault(); erro('');
+  const { data, error } = await sb.auth.signInWithPassword({
+    email: $('loginEmail').value.trim(), password: $('loginSenha').value
+  });
+  if (error) return erro('E-mail ou senha incorretos.');
+  const { data: aluno } = await sb.from('alunos').select('id').eq('id', data.user.id).maybeSingle();
+  if (!aluno) { await sb.auth.signOut(); return erro('Esta conta não tem acesso ativo. Use seu código no primeiro acesso.'); }
+  location.href = '/';
+};
+
+$('formCadastro').onsubmit = async e => {
+  e.preventDefault(); erro('');
+  const codigo = $('cadCodigo').value.trim().toUpperCase();
+  const email = $('cadEmail').value.trim();
+  const senha = $('cadSenha').value;
+  const nome = $('cadNome').value.trim();
+
+  const { data: valido } = await sb.rpc('codigo_valido', { p_codigo: codigo });
+  if (!valido) return erro('Código inválido ou já utilizado.');
+
+  const { data, error } = await sb.auth.signUp({ email, password: senha });
+  if (error) return erro(error.message.includes('already')
+    ? 'Este e-mail já tem conta. Use Entrar.'
+    : 'Não foi possível criar a conta: ' + error.message);
+
+  if (!data.session) {
+    const r = await sb.auth.signInWithPassword({ email, password: senha });
+    if (r.error) return erro('Conta criada, mas não foi possível entrar. Tente Entrar.');
+  }
+
+  const { data: ok } = await sb.rpc('resgatar_codigo', { p_codigo: codigo, p_nome: nome });
+  if (!ok) { await sb.auth.signOut(); return erro('Código inválido ou já utilizado.'); }
+  location.href = '/';
+};
+</script>
+</body>
+</html>

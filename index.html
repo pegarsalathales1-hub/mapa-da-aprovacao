@@ -33,11 +33,8 @@
   <dialog id="confirmDialog"><div class="dialog-head"><h2 id="confirmTitle"></h2><button class="icon-button" data-action="cancel-confirm" aria-label="Fechar">✕</button></div><p id="confirmText"></p><div class="button-row"><button class="secondary" data-action="cancel-confirm">Cancelar</button><button class="primary" id="confirmYes">Confirmar</button></div></dialog>
   <div id="toast" role="status" aria-live="polite"></div>
   <!-- ACCOUNT -->
-  <script>window.MAPA_ACCOUNT={id:'local',role:'user',name:'Thales'};</script>
-  <script src="data.js"></script>
-  <script src="exercises.js"></script>
-  <script src="flashcards-extra.js"></script>
-  <script src="piraquara.js"></script>
-  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="auth.js"></script>
+<script src="auth-gate.js"></script>
 </body>
 </html>
