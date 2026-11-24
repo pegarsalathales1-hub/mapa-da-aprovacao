@@ -13,12 +13,19 @@
     location.replace('/login.html');
   };
 
-  // botão Sair fixo no canto inferior direito
+  // botão Sair, visível só na Visão geral
   const sair = document.createElement('button');
   sair.textContent = 'Sair';
   sair.onclick = window.MAPA_LOGOUT;
-  sair.style.cssText = 'position:fixed;right:16px;bottom:16px;z-index:9999;padding:8px 14px;border:0;border-radius:8px;background:#e8c76a;color:#0e263f;font-weight:700;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.3)';
+  sair.style.cssText = 'position:fixed;top:250px;right:330px;z-index:50;padding:8px 16px;border:1px solid #e8c76a;border-radius:8px;background:transparent;color:#e8c76a;font-weight:700;cursor:pointer';
   document.body.appendChild(sair);
+
+  const mostrarSair = () => {
+    const h = location.hash;
+    sair.style.display = (h === '' || h === '#' || h === '#inicio') ? 'block' : 'none';
+  };
+  window.addEventListener('hashchange', mostrarSair);
+  mostrarSair();
 
   const scripts = ['data.js', 'exercises.js', 'flashcards-extra.js', 'piraquara.js', 'app.js'];
   for (const s of scripts) {
