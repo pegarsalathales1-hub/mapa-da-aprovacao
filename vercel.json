@@ -1,4 +1,7 @@
 {
+    "rewrites": [
+    { "source": "/:path*", "destination": "https://mapa-piraquara.pasteldequeijogtz.workers.dev/:path*" }
+  ],
   "framework": null,
   "buildCommand": "echo ok",
   "outputDirectory": ".",
